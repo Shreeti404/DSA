@@ -1,0 +1,34 @@
+class Solution {
+  public:
+    int thirdLargest(vector<int> &arr) {
+        int n= arr.size();
+        
+        int largest= INT_MIN;
+        int sec= INT_MIN;
+        int third = INT_MIN;
+        
+        
+        for(int i=0;i<n;i++){
+            if(arr[i]>largest){
+                third=sec;
+                sec=largest;
+                largest=arr[i];
+            }
+            
+            
+            else if(arr[i]>sec&&arr[i]!=largest){
+                third=sec;
+                sec=arr[i];
+            }
+            
+            else if(arr[i]!=largest&&arr[i]!=sec&&arr[i]>third){
+                third=arr[i];
+                
+            }
+            
+            
+        }
+        
+        return third;
+    }
+};
