@@ -1,0 +1,26 @@
+class Solution {
+  public:
+    long long findSubarray(vector<int> &arr) {
+        long long total=0;
+        int n=arr.size();
+        
+        unordered_map<long long,long long >m;
+         long long PreSum=0;
+        m[0]=1;
+        
+        
+        for(int i=0;i<n;i++){
+            PreSum+=arr[i];
+            if(m.count(PreSum)){
+                total+=m[PreSum];
+                m[PreSum]++;
+                
+            }
+            m[PreSum]=1;
+        }
+            
+            
+        return total;
+        // code here.
+    }
+};
