@@ -3,7 +3,8 @@ using namespace std;
 
 void func(int* arr,idx,n){
 if(idx==n) return;
-cout<<arr[idx];
+cout<<arr[idx];}
+return max(arr[idx],func(arr,idx+1,n));
 
 func(arr,idx+1,n);
 }
