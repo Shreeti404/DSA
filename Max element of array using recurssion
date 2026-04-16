@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+
+void func(int* arr,idx,n){
+if(idx==n) return;
+cout<<arr[idx];
+
+func(arr,idx+1,n);
+}
+
+int main(){
+int arr= {3,4,2,66,9};
+int n=5;
+func(arr,0,n);
+return 0;
+}
